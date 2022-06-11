@@ -1,21 +1,39 @@
 #! /bin/bash
 
 generateCode() {
-    echo $((RANDOM % 10000));
+    echo $((RANDOM % 9000 + 1000));
 }
 
 printCompareResult(){
     local guess="$1"
     local code="$2"
-    echo "$guess is not equal to $code"
+
+    declare -i flag;
 
     for (( i=0; i<${#guess}; i++)) 
     do
+        flag=0
         if [ ${code:$i:1} -eq ${guess:$i:1} ] 
         then
-            echo "B"
+            echo -n "B"
+        else
+            for (( j=0; j<${#code}; j++))
+            do
+                if [ ${code:$j:1} -eq ${guess:$i:1} ] 
+                then
+                    echo -n "W"
+                    flag=1
+                    break
+                fi
+            done
+            if [ $flag -eq 0 ]
+            then
+                echo -n "_"
+            fi
         fi
     done
+    
+    echo
     
 }
 
