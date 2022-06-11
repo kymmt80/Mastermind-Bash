@@ -28,22 +28,25 @@ printCompareResult(){
             done
             if [ $flag -eq 0 ]
             then
-                echo -n "_"
+                echo -n "#"
             fi
         fi
     done
     
+    echo
+    echo
+    echo "\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$"
     echo
     
 }
 
 run() {
     local code=$(generateCode)
-    echo $code
+    # echo $code
    
     for round in {1..12}
     do
-        echo "Round = $round"
+        echo "ROUND #$round"
         read guess
         printCompareResult "$guess" "$code"
     done
