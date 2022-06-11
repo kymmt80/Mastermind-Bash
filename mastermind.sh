@@ -5,11 +5,14 @@ generateCode() {
 }
 
 run() {
-
-    generateCode
-    local echo=$?
+    local code=$(generateCode)
     echo $code
 
+    for c in "$code"
+    do
+        echo $c
+    done
+   
     for round in {1..12}
     do
         echo "Round = $round"
