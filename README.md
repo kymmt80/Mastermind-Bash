@@ -23,3 +23,17 @@ note: there may exist duplicated digits in the code.
 ```
 $ bash mastermind.sh
 ```
+
+## Final Words
+
+```
+ __________________________________
+/ Mastermind-Bash is the best game \
+\ project ever done!               /
+ ----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+```
