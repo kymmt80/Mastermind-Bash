@@ -62,6 +62,7 @@ printYouWon() {
 }
 
 run() {
+    clear
     printBanner
     local code=$(generateCode)
     # echo $code
@@ -69,6 +70,7 @@ run() {
     for round in {1..12}
     do
         echo "ROUND #$round"
+        echo 
         read guess
         printCompareResult "$guess" "$code"
         if [ $guess -eq $code ] 
