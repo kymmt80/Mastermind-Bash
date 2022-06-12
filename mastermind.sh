@@ -15,20 +15,20 @@ printCompareResult(){
         flag=0
         if [ ${code:$i:1} -eq ${guess:$i:1} ] 
         then
-            echo -n "B"
+            echo -n "■ "
         else
             for (( j=0; j<${#code}; j++))
             do
                 if [ ${code:$j:1} -eq ${guess:$i:1} ] 
                 then
-                    echo -n "W"
+                    echo -n "◪ "
                     flag=1
                     break
                 fi
             done
             if [ $flag -eq 0 ]
             then
-                echo -n "#"
+                echo -n "□ "
             fi
         fi
     done
